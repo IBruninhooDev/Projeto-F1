@@ -4,6 +4,8 @@
  <a href="">Clique Aqui para ir ao Site</a><br/>
 </p>
 
+<img width="1355" height="598" alt="image" src="https://github.com/user-attachments/assets/2456cbb1-cba1-49d8-ae0f-5ead885d9564" />
+
 # 🏎️ F1 DEV
 
 Site moderno inspirado na Fórmula 1 desenvolvido com HTML, CSS e JavaScript puro.
