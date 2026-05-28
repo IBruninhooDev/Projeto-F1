@@ -1,0 +1,719 @@
+/* =========================
+   ROOT
+========================= */
+
+:root{
+
+  --cor-primaria:#ff2d55;
+  --cor-secundaria:#ff5f7e;
+
+  --cor-fundo:#050816;
+  --cor-card:#111827;
+
+  --cor-branca:#ffffff;
+
+  --borda:
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+
+  box-sizing:border-box;
+
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:
+  linear-gradient(
+    180deg,
+    #020617,
+    #0f172a
+  );
+
+  color:white;
+
+  overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:1000;
+
+  background:
+  rgba(5,8,22,0.7);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:
+  1px solid var(--borda);
+}
+
+.navbar{
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:20px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* LOGO */
+
+.logo{
+  text-decoration:none;
+
+  color:white;
+
+  font-size:2rem;
+
+  font-weight:bold;
+}
+
+.logo span{
+  color:var(--cor-primaria);
+}
+
+/* MENU */
+
+.nav-links{
+  display:flex;
+
+  gap:35px;
+
+  list-style:none;
+}
+
+.nav-links a{
+  color:white;
+
+  text-decoration:none;
+
+  position:relative;
+
+  transition:0.3s;
+}
+
+.nav-links a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:0%;
+  height:2px;
+
+  background:var(--cor-primaria);
+
+  transition:0.4s;
+}
+
+.nav-links a:hover{
+  color:var(--cor-primaria);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* HAMBURGUER */
+
+.hamburger{
+  display:none;
+
+  flex-direction:column;
+
+  gap:5px;
+
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+
+  border-radius:10px;
+
+  background:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  position:relative;
+
+  width:100%;
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(5,8,22,0.95)
+  ),
+  url("/src/img/ferrari-banner.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+/* OVERLAY */
+
+.overlay{
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at center,
+    transparent,
+    rgba(0,0,0,0.8)
+  );
+}
+
+/* GRID */
+
+.grid{
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+  linear-gradient(
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px
+  );
+
+  background-size:60px 60px;
+
+  animation:gridMove 12s linear infinite;
+}
+
+/* LIGHT */
+
+.light{
+  position:absolute;
+
+  width:500px;
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,45,85,0.2),
+    transparent 70%
+  );
+
+  animation:pulse 5s ease infinite;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+  position:relative;
+
+  z-index:10;
+
+  max-width:800px;
+
+  padding:20px;
+}
+
+.tag{
+  display:inline-block;
+
+  padding:12px 22px;
+
+  border-radius:30px;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  margin-bottom:25px;
+
+  animation:glow 3s ease infinite;
+}
+
+.hero-content h1{
+  font-size:5rem;
+
+  line-height:1.1;
+
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  font-size:1.1rem;
+
+  line-height:1.8;
+
+  opacity:0.8;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.pilotos,
+.carros{
+  padding:120px 20px;
+}
+
+.section-title{
+  text-align:center;
+
+  margin-bottom:70px;
+}
+
+.section-title span{
+  color:var(--cor-primaria);
+
+  letter-spacing:3px;
+}
+
+.section-title h2{
+  font-size:3rem;
+
+  margin-top:10px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.cards-container{
+  max-width:1200px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,1fr));
+
+  gap:40px;
+}
+
+/* =========================
+   PILOT CARD
+========================= */
+
+.pilot-card{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:30px;
+
+  min-height:600px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+
+  backdrop-filter:blur(10px);
+
+  border:
+  1px solid var(--borda);
+
+  transition:0.6s;
+
+  cursor:pointer;
+}
+
+.pilot-card:hover{
+  transform:
+  translateY(-15px);
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* FUNDO */
+
+.card-bg{
+  position:absolute;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(255,45,85,0.15),
+    transparent 70%
+  );
+}
+
+/* ESCUDO */
+
+.team-logo{
+  position:absolute;
+
+  top:25px;
+  left:25px;
+
+  width:70px;
+
+  opacity:0.15;
+}
+
+/* PILOTO */
+
+.pilot-img{
+  width:100%;
+
+  height:380px;
+
+  object-fit:contain;
+
+  margin-top:40px;
+
+  transition:0.6s;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.pilot-card:hover .pilot-img{
+  transform:
+  scale(1.05)
+  translateY(-10px);
+}
+
+/* INFO */
+
+.pilot-info{
+  position:relative;
+
+  z-index:2;
+
+  padding:30px;
+}
+
+.number{
+  color:var(--cor-primaria);
+
+  letter-spacing:3px;
+
+  font-size:0.9rem;
+}
+
+.pilot-info h3{
+  font-size:2rem;
+
+  margin:10px 0;
+}
+
+.pilot-info p{
+  opacity:0.8;
+
+  margin-bottom:30px;
+}
+
+/* STATS */
+
+.stats{
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.stat{
+  flex:1;
+
+  text-align:center;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+.stat h4{
+  color:var(--cor-primaria);
+
+  font-size:1.8rem;
+
+  margin-bottom:8px;
+}
+
+.stat span{
+  font-size:0.9rem;
+
+  opacity:0.7;
+}
+
+/* =========================
+   CAR CARD
+========================= */
+
+.car-card{
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:30px;
+
+  min-height:500px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.02)
+  );
+
+  border:
+  1px solid var(--borda);
+
+  transition:0.6s;
+
+  cursor:pointer;
+}
+
+.car-card:hover{
+  transform:
+  translateY(-15px);
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* GLOW */
+
+.car-glow{
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,45,85,0.2),
+    transparent 70%
+  );
+
+  top:50%;
+  left:50%;
+
+  transform:
+  translate(-50%,-50%);
+}
+
+/* CARRO */
+
+.car-img{
+  position:relative;
+
+  z-index:2;
+
+  width:100%;
+
+  height:320px;
+
+  object-fit:contain;
+
+  margin-top:40px;
+
+  transition:0.8s;
+}
+
+.car-card:hover .car-img{
+  transform:
+  scale(1.08)
+  translateY(-10px);
+}
+
+/* INFO */
+
+.car-info{
+  position:relative;
+
+  z-index:2;
+
+  padding:30px;
+}
+
+.car-info span{
+  color:var(--cor-primaria);
+
+  letter-spacing:3px;
+}
+
+.car-info h3{
+  font-size:2rem;
+
+  margin:10px 0;
+}
+
+.car-info p{
+  opacity:0.8;
+
+  line-height:1.7;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.2);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+@keyframes glow{
+
+  0%{
+    box-shadow:
+    0 0 10px rgba(255,45,85,0.2);
+  }
+
+  50%{
+    box-shadow:
+    0 0 30px rgba(255,45,85,0.5);
+  }
+
+  100%{
+    box-shadow:
+    0 0 10px rgba(255,45,85,0.2);
+  }
+
+}
+
+@keyframes gridMove{
+
+  0%{
+    transform:translateY(0);
+  }
+
+  100%{
+    transform:translateY(60px);
+  }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:fixed;
+
+    top:0;
+    right:-100%;
+
+    width:100%;
+    height:100vh;
+
+    background:#111827;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    transition:0.5s;
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .hero-content h1{
+    font-size:3rem;
+  }
+
+  .stats{
+    flex-direction:column;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero-content h1{
+    font-size:2.2rem;
+  }
+
+  .section-title h2{
+    font-size:2rem;
+  }
+
+}

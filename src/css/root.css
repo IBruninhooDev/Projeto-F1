@@ -1,0 +1,293 @@
+/* =========================
+   ROOT
+========================= */
+
+:root{
+
+  /* CORES */
+  --cor-primaria: #ff2d55;
+  --cor-secundaria: #ff5f7e;
+
+  --cor-fundo: #0f172a;
+  --cor-menu-mobile: #111827;
+
+  --cor-branca: #ffffff;
+  --cor-borda: rgba(255,255,255,0.1);
+
+  /* FONTES */
+  --fonte-principal: Arial, Helvetica, sans-serif;
+
+  /* TAMANHOS */
+  --container: 1200px;
+
+  --logo-size: 1.8rem;
+  --menu-size: 1rem;
+  --hero-title: 4rem;
+  --hero-title-mobile: 2.5rem;
+
+  /* ESPAÇAMENTOS */
+  --padding-navbar: 18px 25px;
+  --gap-menu: 35px;
+
+  /* BORDAS */
+  --radius-btn: 30px;
+  --radius-hamburger: 5px;
+
+  /* TRANSIÇÕES */
+  --transition: 0.3s;
+  --transition-menu: 0.5s;
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:var(--fonte-principal);
+}
+
+body{
+  background:var(--cor-fundo);
+  min-height:100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  width:100%;
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  z-index:1000;
+
+  background:rgba(15, 23, 42, 0.95);
+
+  backdrop-filter: blur(10px);
+
+  border-bottom:1px solid var(--cor-borda);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+  max-width:var(--container);
+
+  margin:auto;
+
+  padding:var(--padding-navbar);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+  color:var(--cor-branca);
+
+  font-size:var(--logo-size);
+
+  font-weight:bold;
+
+  letter-spacing:2px;
+}
+
+.logo span{
+  color:var(--cor-primaria);
+}
+
+/* =========================
+   MENU
+========================= */
+
+.nav-links{
+  display:flex;
+
+  gap:var(--gap-menu);
+
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+
+  color:var(--cor-branca);
+
+  font-size:var(--menu-size);
+
+  position:relative;
+
+  transition:var(--transition);
+}
+
+/* LINHA HOVER */
+
+.nav-links a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-6px;
+
+  width:0%;
+  height:2px;
+
+  background:var(--cor-primaria);
+
+  transition:0.4s;
+}
+
+.nav-links a:hover{
+  color:var(--cor-primaria);
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn{
+  background:linear-gradient(
+    45deg,
+    var(--cor-primaria),
+    var(--cor-secundaria)
+  );
+
+  padding:10px 18px;
+
+  border-radius:var(--radius-btn);
+
+  font-weight:bold;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* =========================
+   HAMBURGUER
+========================= */
+
+.hamburger{
+  display:none;
+
+  flex-direction:column;
+
+  cursor:pointer;
+
+  gap:5px;
+}
+
+.hamburger span{
+  width:28px;
+  height:3px;
+
+  background:var(--cor-branca);
+
+  border-radius:var(--radius-hamburger);
+
+  transition:var(--transition);
+}
+
+/* ANIMAÇÃO */
+
+.hamburger.active span:nth-child(1){
+  transform:rotate(45deg) translateY(11px);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+  transform:rotate(-45deg) translateY(-11px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  height:100vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+
+  text-align:center;
+
+  color:var(--cor-branca);
+
+  padding:20px;
+}
+
+.hero h1{
+  font-size:var(--hero-title);
+
+  margin-bottom:20px;
+}
+
+.hero p{
+  opacity:0.8;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:768px){
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+
+    top:80px;
+    right:-100%;
+
+    width:100%;
+    height:calc(100vh - 80px);
+
+    background:var(--cor-menu-mobile);
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    transition:var(--transition-menu);
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .nav-links a{
+    font-size:1.5rem;
+  }
+
+  .hero h1{
+    font-size:var(--hero-title-mobile);
+  }
+
+}

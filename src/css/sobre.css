@@ -1,0 +1,100 @@
+/* =========================
+   SOBRE F1
+========================= */
+
+.sobre-f1{
+  width:100%;
+
+  padding:100px 20px;
+
+  background:#111827;
+
+  color:var(--cor-branca);
+}
+
+.sobre-container{
+  max-width:var(--container);
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:50px;
+
+  align-items:center;
+}
+
+/* TEXTO */
+
+.sobre-texto h2{
+  font-size:3rem;
+
+  margin-bottom:20px;
+
+  color:var(--cor-primaria);
+}
+
+.sobre-texto p{
+  line-height:1.8;
+
+  opacity:0.8;
+}
+
+/* CARDS */
+
+.sobre-cards{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:20px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  padding:30px 20px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  backdrop-filter:blur(10px);
+
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card h3{
+  font-size:2.5rem;
+
+  color:var(--cor-primaria);
+
+  margin-bottom:10px;
+}
+
+.card span{
+  font-size:1rem;
+
+  opacity:0.8;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+  .sobre-container{
+    grid-template-columns:1fr;
+  }
+
+  .sobre-cards{
+    grid-template-columns:1fr;
+  }
+
+}
