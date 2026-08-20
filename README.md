@@ -85,9 +85,9 @@ O site apresenta:
  ┣ 📜 index.html
  ┗ 📜 README.md
 ```
-- [GitHub](https://github.com/DevIBrunoo)
+- [GitHub](https://github.com/IBrunooDev)
 - [LinkedIn](https://www.linkedin.com/in/brunocarus/?originalSubdomain=br)
-- [Instagram](https://www.instagram.com/devibrunoo/)
+- [Instagram](https://www.instagram.com/ibrunoodev)
 
-Desenvolvido com :heart: por [BrunoCarus](https://github.com/DevIBrunoo) 
-© 2026 IBruninhooDev. Todos os direitos reservados.
+Desenvolvido com :heart: por [IBrunooDev](https://github.com/IBrunooDev) 
+© 2026 IBrunooDev. Todos os direitos reservados.
